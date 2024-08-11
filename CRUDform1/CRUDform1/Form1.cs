@@ -20,7 +20,7 @@ namespace CRUDform1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=TINA\\SQLEXPRESS;Initial Catalog=CRUDform1;Integrated Security=True;Trust Server Certificate=True ");
+            SqlConnection con = new SqlConnection("Data Source=TINA\\SQLEXPRESS;Initial Catalog=CRUDform1;Integrated Security=True; ");
             con.Open();
             SqlCommand cmd = new SqlCommand("insert into Table_1 values(@id, @name, @phone, @email)", con);
             cmd.Parameters.AddWithValue("@id", int.Parse(textBox1.Text));
@@ -39,7 +39,7 @@ namespace CRUDform1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=TINA\\SQLEXPRESS;Initial Catalog=CRUDform1;Integrated Security=True;Trust Server Certificate=True ");
+            SqlConnection con = new SqlConnection("Data Source=TINA\\SQLEXPRESS;Initial Catalog=CRUDform1;Integrated Security=True; ");
             con.Open();
             SqlCommand cmd = new SqlCommand("update Table_1 set name= @name, @phone, @email where id=@id", con);
             cmd.Parameters.AddWithValue("@id", int.Parse(textBox1.Text));
@@ -54,7 +54,7 @@ namespace CRUDform1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=TINA\\SQLEXPRESS;Initial Catalog=CRUDform1;Integrated Security=True;Trust Server Certificate=True ");
+            SqlConnection con = new SqlConnection("Data Source=TINA\\SQLEXPRESS;Initial Catalog=CRUDform1;Integrated Security=True; ");
             con.Open();
             SqlCommand cmd = new SqlCommand("delete Table_1 where id=@id", con);
             cmd.Parameters.AddWithValue("@id", int.Parse(textBox1.Text));
