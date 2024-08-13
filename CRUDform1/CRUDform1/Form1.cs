@@ -35,6 +35,16 @@ namespace CRUDform1
 
         private void button2_Click(object sender, EventArgs e)
         {
+        
+            SqlConnection con = new SqlConnection("Data Source=TINA\\SQLEXPRESS;Initial Catalog=CRUDform1;Integrated Security=True; ");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from CMtable", con);
+            SqlDataAdapter da= new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            dataGridView1.DataSource = dt;
+
         }
 
         private void button3_Click(object sender, EventArgs e)
