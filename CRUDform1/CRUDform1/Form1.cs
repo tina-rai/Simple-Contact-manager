@@ -17,7 +17,7 @@ namespace CRUDform1
         {
             InitializeComponent();
         }
-
+//CREATE or add new contact
         private void button1_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection("Data Source=TINA\\SQLEXPRESS;Initial Catalog=CRUDform1;Integrated Security=True; ");
@@ -32,7 +32,7 @@ namespace CRUDform1
             con.Close();
             MessageBox.Show("Successfully added");
         }
-
+//READ or search a contact
         private void button2_Click(object sender, EventArgs e)
         {
         
@@ -46,7 +46,7 @@ namespace CRUDform1
             dataGridView1.DataSource = dt;
 
         }
-
+//UPDATE an information for a contact
         private void button3_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection("Data Source=TINA\\SQLEXPRESS;Initial Catalog=CRUDform1;Integrated Security=True; ");
@@ -61,7 +61,7 @@ namespace CRUDform1
             con.Close();
             MessageBox.Show("Successfully updated");
         }
-
+//DELETE a contact
         private void button4_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection("Data Source=TINA\\SQLEXPRESS;Initial Catalog=CRUDform1;Integrated Security=True; ");
