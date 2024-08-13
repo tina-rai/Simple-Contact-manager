@@ -22,11 +22,11 @@ namespace CRUDform1
         {
             SqlConnection con = new SqlConnection("Data Source=TINA\\SQLEXPRESS;Initial Catalog=CRUDform1;Integrated Security=True; ");
             con.Open();
-            SqlCommand cmd = new SqlCommand("insert into Table_1 values(@id, @name, @phone, @email)", con);
+            SqlCommand cmd = new SqlCommand("insert into CMtable values(@id, @name, @phone, @address)", con);
             cmd.Parameters.AddWithValue("@id", textBox1.Text);
             cmd.Parameters.AddWithValue("@name", textBox2.Text);
             cmd.Parameters.AddWithValue("@phone", textBox3.Text);
-            cmd.Parameters.AddWithValue("@email", textBox4.Text);
+            cmd.Parameters.AddWithValue("@address", textBox4.Text);
 
             cmd.ExecuteNonQuery();
             con.Close();
@@ -41,11 +41,11 @@ namespace CRUDform1
         {
             SqlConnection con = new SqlConnection("Data Source=TINA\\SQLEXPRESS;Initial Catalog=CRUDform1;Integrated Security=True; ");
             con.Open();
-            SqlCommand cmd = new SqlCommand("update Table_1 set name= @name, @phone, @email where id=@id", con);
+            SqlCommand cmd = new SqlCommand("update CMtable set name= @name, @phone, @address where id=@id", con);
             cmd.Parameters.AddWithValue("@id", textBox1.Text);
             cmd.Parameters.AddWithValue("@name", textBox2.Text);
             cmd.Parameters.AddWithValue("@phone", textBox3.Text);
-            cmd.Parameters.AddWithValue("@email", textBox4.Text);
+            cmd.Parameters.AddWithValue("@address", textBox4.Text);
 
             cmd.ExecuteNonQuery();
             con.Close();
@@ -56,7 +56,7 @@ namespace CRUDform1
         {
             SqlConnection con = new SqlConnection("Data Source=TINA\\SQLEXPRESS;Initial Catalog=CRUDform1;Integrated Security=True; ");
             con.Open();
-            SqlCommand cmd = new SqlCommand("delete Table_1 where id=@id", con);
+            SqlCommand cmd = new SqlCommand("delete CMtable where id=@id", con);
             cmd.Parameters.AddWithValue("@id", int.Parse(textBox1.Text));
 
             cmd.ExecuteNonQuery();
