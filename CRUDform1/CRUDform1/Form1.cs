@@ -23,9 +23,9 @@ namespace CRUDform1
             SqlConnection con = new SqlConnection("Data Source=TINA\\SQLEXPRESS;Initial Catalog=CRUDform1;Integrated Security=True; ");
             con.Open();
             SqlCommand cmd = new SqlCommand("insert into Table_1 values(@id, @name, @phone, @email)", con);
-            cmd.Parameters.AddWithValue("@id", int.Parse(textBox1.Text));
+            cmd.Parameters.AddWithValue("@id", textBox1.Text);
             cmd.Parameters.AddWithValue("@name", textBox2.Text);
-            cmd.Parameters.AddWithValue("@phone", int.Parse(textBox3.Text));
+            cmd.Parameters.AddWithValue("@phone", textBox3.Text);
             cmd.Parameters.AddWithValue("@email", textBox4.Text);
 
             cmd.ExecuteNonQuery();
@@ -42,9 +42,9 @@ namespace CRUDform1
             SqlConnection con = new SqlConnection("Data Source=TINA\\SQLEXPRESS;Initial Catalog=CRUDform1;Integrated Security=True; ");
             con.Open();
             SqlCommand cmd = new SqlCommand("update Table_1 set name= @name, @phone, @email where id=@id", con);
-            cmd.Parameters.AddWithValue("@id", int.Parse(textBox1.Text));
+            cmd.Parameters.AddWithValue("@id", textBox1.Text);
             cmd.Parameters.AddWithValue("@name", textBox2.Text);
-            cmd.Parameters.AddWithValue("@phone", int.Parse(textBox3.Text));
+            cmd.Parameters.AddWithValue("@phone", textBox3.Text);
             cmd.Parameters.AddWithValue("@email", textBox4.Text);
 
             cmd.ExecuteNonQuery();
